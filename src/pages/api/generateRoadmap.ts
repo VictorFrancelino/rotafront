@@ -10,7 +10,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     const genAI = new GoogleGenerativeAI(import.meta.env.GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-pro",
+      model: "gemini-2.5-flash-lite",
       generationConfig: {
         temperature: 0.5,
         responseMimeType: "application/json",
@@ -18,47 +18,44 @@ export const POST: APIRoute = async ({ request }) => {
     });
 
     const prompt = `
-      Você é um especialista em Front-End, quero que você crie um roadmap na ordem que o usuário precisa aprender de acordo com as tecnologias que ele informou que já domina, que está estudando e que quer aprender. Analise todas essas tecnologias e monte um roadmap para que o usuário novato em desenvolvimento Front-End saiba o que estudar e quando estudar. Também leve em consideração as tecnologias que o usuário não selecionou e veja se faz sentido o usuário estudar algumas das tecnologias que não foram selecionadas de acordo com as tecnologias que ele selecionou.
+      Você é um especialista em Front-End. Analise o conhecimento do usuário e crie um roadmap de estudos focado em suas metas, priorizando as tecnologias que ele deseja aprender.
 
-      Considere:
-      1. Priorize as tecnologias que o usuário deseja aprender
-      2. Organize em uma sequência lógica (ex: fundamentos antes de frameworks)
-      3. Relacione tecnologias complementares
-      4. Considere o conhecimento atual do usuário (tecnologias dominadas e em estudo)
+      Instruções:
+      1. Sequência Lógica: Organize os passos de forma sequencial (ex: fundamentos antes de frameworks).
+      2. Pré-requisitos: Se a meta do usuário depender de uma tecnologia não dominada, o primeiro passo deve ser focado no pré-requisito.
+      3. Tecnologias Complementares: Inclua tecnologias relevantes que o usuário não selecionou, se fizerem sentido para o roadmap.
 
       Dados do usuário:
-      - Tecnologias que já domina: ${mastered || "Nenhuma"}
-      - Tecnologias que está estudando: ${studying || "Nenhuma"}
-      - Tecnologias que deseja aprender: ${learningGoals || "Nenhuma"}
-      - Tecnologias que não foram selecionadas: ${unselectedTechs || "Nenhuma"}
+      - Dominadas: ${mastered || "Nenhuma"}
+      - Em Estudo: ${studying || "Nenhuma"}
+      - Metas: ${learningGoals || "Nenhuma"}
+      - Não Selecionadas: ${unselectedTechs || "Nenhuma"}
 
-      FORMATO DE SAÍDA EXIGIDO (APENAS JSON):
+
+      Formato de Saída (JSON):
       {
         "steps": [
           {
             "step": 1,
-            "title": "Nome desse passo",
-            "dependencies": ["Lista", "de", "pré-requisitos"],
-            "description": "Por que aprender e como aplicar no contexto front-end",
+            "title": "Nome do passo (ex: 'Fundamentos de JavaScript')",
+            "description": "Explicação do porquê e como aplicar",
             "resources": [
               {
                 "title": "Título do recurso",
                 "url": "https://exemplo.com"
               }
             ]
-          },
+          }
         ]
       }
 
-      Regras estritas:
-      - Se o usuário quiser aprender uma tecnologia (ex: React) mas não dominar seus pré-requisitos essenciais (ex: JavaScript), o primeiro passo do roadmap DEVE ser focado em fortalecer esses pré-requisitos antes de introduzir a tecnologia desejada.
-      - Não inclua nenhum texto adicional além do JSON
-      - Formate cada etapa com tecnologia principal e suas dependências
+      Restrições:
+      - A saída deve ser APENAS o JSON.
+      - O JSON deve conter a tecnologia principal do passo e suas dependências.
     `;
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
-
     const roadmapContent = response.text().trim();
 
     try {

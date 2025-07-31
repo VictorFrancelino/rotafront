@@ -38,9 +38,6 @@ const TechsSection = () => {
                 : "Erro ao gerar roadmap"}
             </p>
             <p className="text-red-600 mt-1">{error}</p>
-            <p className="text-red-600 mt-1">
-              Por favor, tente novamente mais tarde.
-            </p>
           </div>
         )}
       </div>

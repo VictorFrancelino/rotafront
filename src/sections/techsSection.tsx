@@ -1,5 +1,5 @@
 import { techsList as initialTechs } from "../data/techsList";
-import useRoadmapGenerator from "../hooks/useRoadmapGenerator";
+import useRoadmapGenerator, { ERROR_TYPES } from "../hooks/useRoadmapGenerator";
 import RoadmapView from "../components/roadmapView";
 import LoadingButton from "../components/loadingButton";
 import CardsContainer from "../components/cardsContainer";
@@ -32,8 +32,13 @@ const TechsSection = () => {
 
         {error && (
           <div className="mt-4 p-4 bg-red-50 rounded-lg border border-red-500 max-w-2xl text-center">
-            <p className="text-red-600 mt-2">{error}</p>
-            <p className="text-red-600 mt-2">
+            <p className="text-red-600 font-medium">
+              {error === ERROR_TYPES.INVALID_API_KEY
+                ? "Erro de configuração do sistema"
+                : "Erro ao gerar roadmap"}
+            </p>
+            <p className="text-red-600 mt-1">{error}</p>
+            <p className="text-red-600 mt-1">
               Por favor, tente novamente mais tarde.
             </p>
           </div>

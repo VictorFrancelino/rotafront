@@ -3,10 +3,11 @@ import type { Tech } from "../types/tech";
 import type { RoadmapStep } from "../types/roadmap";
 import type { CardType } from "../types/card";
 
-const ERROR_TYPES = {
+export const ERROR_TYPES = {
   NETWORK: "Falha na conexão com o servidor. Verifique sua internet.",
   IA_RESPONSE: "Problema na geração do roadmap. Tente ajustar suas seleções.",
   INVALID_FORMAT: "Formato inválido de resposta. Contate o suporte.",
+  INVALID_API_KEY: "Chave de API inválida. Contate o administrador do site.",
   DEFAULT: "Erro ao gerar roadmap. Tente novamente mais tarde.",
 };
 

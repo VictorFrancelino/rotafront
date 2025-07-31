@@ -1,5 +1,8 @@
 ---
 import "../styles/global.css"
+const title = "RotaFront - Seu Copiloto na Jornada Front-End"
+const description = "Gere um roadmap de estudos personalizado para desenvolvimento Front-End com IA. Descubra o que aprender baseado em suas habilidades atuais."
+const siteUrl = "https://rotafront.netlify.app/"
 ---
 
 <!doctype html>
@@ -7,9 +10,34 @@ import "../styles/global.css"
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="author" content="Victor Francelino" />
+		<meta name="robots" content="index, follow" />
+
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={siteUrl} />
+		<meta property="og:type" content="website" />
+
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>RotaFront</title>
+		<link rel="canonical" href={siteUrl} />
+		<title>{title}</title>
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebApplication",
+				"name": "RotaFront",
+				"description": "Gere um roadmap de estudos personalizado para desenvolvimento Front-End com IA. Descubra o que aprender baseado em suas habilidades atuais.",
+				"applicationCategory": ["Educational", "WebApplication"],
+				"operatingSystem": "Web",
+				"author": {
+					"@type": "Person",
+					"name": "Victor Francelino"
+				}
+			}
+		</script>
 	</head>
 	<body class="m-0 w-full h-full flex flex-col justify-between bg-slate-50 text-slate-800">
 		<slot />

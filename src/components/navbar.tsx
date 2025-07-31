@@ -7,7 +7,7 @@ const Navbar = () => {
         RotaFront
       </h1>
       <a
-        href="#"
+        href="https://github.com/VictorFrancelino/rotafront"
         target="_blank"
         aria-label="Visitar repositório do projeto no GitHub"
         className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-violet-500 bg-transparent text-violet-500 transition-all duration-300 hover:bg-violet-500 hover:text-slate-50 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2"

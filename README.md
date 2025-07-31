@@ -1,6 +1,6 @@
 # RotaFront 🧭
 
-**RotaFront** é o seu copiloto na jornada de desenvolvimento Front-End. Esta aplicação interativa permite que você selecione as tecnologias que já domina, as que está estudando e as que deseja aprender. Com base nessas informações, nossa IA, integrada com o **Google Gemini**, gera um roadmap de estudos personalizado e lógico para acelerar sua carreira.
+**RotaFront** é o seu copiloto na jornada de desenvolvimento Front-End. Esta aplicação interativa permite que você selecione as tecnologias que já domina, as que está estudando e as que deseja aprender. Com base nessas informações, a IA, integrada com o **Google Gemini**, gera um roadmap de estudos personalizado e lógico para acelerar sua carreira.
 
 ---
 
@@ -16,12 +16,12 @@
 
 ## 💻 Tecnologias Utilizadas
 
-- **Framework:**[**Astro**](https://astro.build/) - Para o ambiente de desenvolvimento e build do site, permitindo a renderização de componentes de UI no servidor ou cliente.
-- **Biblioteca de UI:**[**React**](https://react.dev/) - Para criar os componentes interativos da aplicação (client:load).
-- **Linguagem:**[**TypeScript**](https://www.typescriptlang.org/) - Para adicionar tipagem estática e aumentar a robustez do código.
-- **Estilização:**[**TailwindCSS**](https://tailwindcss.com/) - Para a criação de uma interface moderna e responsiva de forma utilitária.
-- **IA Generativa:**[**Google Gemini**](https://ai.google.dev/) - Para a lógica de geração do roadmap através de sua API.
-- **Ícones:**[**React Icons**](https://react-icons.github.io/react-icons/) - Para a utilização de ícones vetoriais de diversas bibliotecas.
+- **Framework:** [**Astro**](https://astro.build/) - Para o ambiente de desenvolvimento e build do site, permitindo a renderização de componentes de UI no servidor ou cliente.
+- **Biblioteca de UI:** [**React**](https://react.dev/) - Para criar os componentes interativos da aplicação (client:load).
+- **Linguagem:** [**TypeScript**](https://www.typescriptlang.org/) - Para adicionar tipagem estática e aumentar a robustez do código.
+- **Estilização:** [**TailwindCSS**](https://tailwindcss.com/) - Para a criação de uma interface moderna e responsiva de forma utilitária.
+- **IA Generativa:** [**Google Gemini**](https://ai.google.dev/) - Para a lógica de geração do roadmap através de sua API.
+- **Ícones:** [**React Icons**](https://react-icons.github.io/react-icons/) - Para a utilização de ícones vetoriais de diversas bibliotecas.
 
 ---
 
@@ -39,16 +39,16 @@ Siga os passos abaixo para executar o RotaFront em seu ambiente de desenvolvimen
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/rotafront.git
+git clone https://github.com/VictorFrancelino/rotafront.git
 ```
 
-1. Navegue até o diretório do projeto:
+2. Navegue até o diretório do projeto:
 
 ```bash
 cd rotafront
 ```
 
-1. Instale as dependências:
+3. Instale as dependências:
 
 ```bash
 npm install
@@ -141,4 +141,4 @@ src/
 
 ## Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://www.google.com/search?q=LICENSE) para mais detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/VictorFrancelino/rotafront?tab=MIT-1-ov-file) para mais detalhes.

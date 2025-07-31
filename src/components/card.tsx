@@ -60,8 +60,9 @@ const Card = ({
       id={id}
       className={`
         w-full lg:w-[450px] xl:w-[500px]
-        bg-slate-50
-        border-2 border-${color}-500
+        bg-white
+        shadow hover:shadow-lg
+        transition-all duration-300
         p-5 rounded-xl space-y-5
       `}
     >
